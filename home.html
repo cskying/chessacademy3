@@ -1,0 +1,325 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Chess Academy | Master the Royal Game</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3131",
+                    "on-tertiary-container": "#838484",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-surface": "#1a1c1c",
+                    "surface-tint": "#5e5e5e",
+                    "tertiary": "#000000",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed": "#e4e2e2",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "outline": "#7e7576",
+                    "tertiary-fixed": "#e2e2e2",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "surface-container-low": "#f3f3f3",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-background": "#1a1c1c",
+                    "background": "#ffffff",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#f5f5f7",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#e1dfdf",
+                    "surface": "#ffffff",
+                    "on-surface-variant": "#4c4546",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary-fixed-dim": "#c7c6c6",
+                    "surface-container": "#f5f5f7",
+                    "surface-dim": "#dadada",
+                    "inverse-primary": "#c6c6c6",
+                    "primary-container": "#1b1b1b",
+                    "on-primary-fixed-variant": "#474747",
+                    "tertiary-container": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#464747",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "secondary": "#5e5e5e",
+                    "primary": "#000000",
+                    "primary-fixed": "#e2e2e2",
+                    "on-primary-container": "#848484",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#ffffff",
+                    "on-secondary-container": "#626262",
+                    "outline-variant": "#d2d2d7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.75rem",
+                    "xl": "1rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "80px",
+                    "max-width": "1200px",
+                    "unit": "4px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-md-mobile": ["Inter", "sans-serif"],
+                    "body-sm": ["Inter", "sans-serif"],
+                    "title-sm": ["Inter", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"],
+                    "display-lg": ["Inter", "sans-serif"],
+                    "headline-md": ["Inter", "sans-serif"],
+                    "label-mono": ["JetBrains Mono", "monospace"]
+            },
+            "fontSize": {
+                    "headline-md-mobile": ["32px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "title-sm": ["20px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["19px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.05", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+                    "headline-md": ["48px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                    "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1d1d1f;
+            -webkit-font-smoothing: antialiased;
+        }
+        .apple-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+        .hero-gradient {
+            background: #ffffff;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+        .section-padding {
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            .display-lg { font-size: 48px; line-height: 1.1; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden" style="filter: grayscale(100%) contrast(1.1);">
+<!-- TopNavBar -->
+<header class="glass-nav full-width top-0 border-b border-outline-variant/30 z-50 sticky">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-12">
+<div class="font-bold text-[21px] tracking-tight text-primary">
+            Chess Academy
+        </div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-xs font-normal text-on-surface hover:text-primary transition-colors duration-200" href="#">Home</a>
+<a class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors duration-200" href="#">How to Play</a>
+<a class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors duration-200" href="#">Watch a Tutorial</a>
+<a class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors duration-200" href="#">Best Players</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors">Sign In</button>
+<button class="text-[11px] font-medium bg-primary text-on-primary px-3 py-1 rounded-full hover:bg-opacity-80 transition-all">Register</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[95vh] flex flex-col items-center justify-center text-center px-margin-mobile md:px-margin-desktop overflow-hidden bg-white">
+<div class="absolute inset-0 z-0">
+</div>
+<div class="relative z-10 max-w-5xl pt-20 pb-40">
+<h1 class="font-display-lg text-[48px] md:text-[80px] text-primary mb-6 leading-[1.05] tracking-tight">Master the Art of <br class="hidden md:block">Strategic Dominance.</h1>
+<p class="text-[21px] md:text-[24px] text-[#86868b] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                A timeless sanctuary for the intellectual athlete. Clarity through precision.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<button class="bg-[#0071e3] text-white px-8 py-3 font-medium hover:bg-[#0077ed] transition-all rounded-full min-w-[160px] text-[17px]">Start Journey</button>
+<a class="text-[#0066cc] hover:underline flex items-center gap-1 font-medium text-[17px]" href="#">
+                    Explore Courses
+                    <span class="material-symbols-outlined text-[17px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-40">
+<span class="material-symbols-outlined animate-bounce">keyboard_arrow_down</span>
+</div>
+</section>
+<!-- Feature Apple-style Grid -->
+<section class="section-padding px-margin-mobile md:px-margin-desktop bg-[#f5f5f7]">
+<div class="max-w-max-width mx-auto">
+<div class="mb-16 text-center">
+<h2 class="text-[32px] md:text-[48px] font-bold text-primary tracking-tight">The Scholastic Standard.</h2>
+</div>
+<div class="apple-grid">
+<!-- Large Card -->
+<div class="col-span-12 md:col-span-7 bg-white rounded-3xl p-10 md:p-14 flex flex-col justify-between group overflow-hidden relative shadow-sm hover:shadow-md transition-shadow">
+<div class="relative z-10 max-w-sm">
+<span class="text-[12px] font-semibold text-[#86868b] mb-2 block uppercase tracking-wider">Curriculum</span>
+<h3 class="text-[28px] md:text-[34px] font-bold text-primary mb-4 leading-tight">Interdisciplinary Theory.</h3>
+<p class="text-[#86868b] text-[17px] leading-relaxed">Our curriculum blends historical analysis with modern engine-driven precision, providing a comprehensive understanding of the 64 squares.</p>
+</div>
+<div class="mt-12">
+<a class="text-[#0066cc] hover:underline flex items-center gap-1 font-medium text-[17px]" href="#">
+                            Explore syllabus
+                            <span class="material-symbols-outlined text-[17px]">chevron_right</span>
+</a>
+</div>
+<div class="absolute right-0 bottom-0 w-1/2 h-2/3 opacity-10 pointer-events-none p-4">
+<img class="w-full h-full object-contain" data-alt="Minimalist chess king" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnp2L_w2sMkfrKVncZrvub1q0K5I9yQw0_yFSrygNd0htu9SD5Gm2hRyHNrijmeWSkdyW529DvsLT5N7neg7K5IvGQ2SiGRQkqbekbd5zXxrXT2cSyQgKVxM0ZpfugHPesRXQ-JrJGz1tibj0zUouddJQVVaE5MAWYbZKk3NVTrkPC3436FLrWp3uwlL13TNpHruKqCpcrULPzLjYP6yhIOnHW7PwzS5J1GbYpOpTXVq8ecEZjB_fnkSNtC1XcvpV8NK6bfrU8INY">
+</div>
+</div>
+<!-- Small Card -->
+<div class="col-span-12 md:col-span-5 bg-black rounded-3xl p-10 md:p-14 flex flex-col justify-between text-white shadow-sm overflow-hidden relative">
+<div class="relative z-10">
+<span class="text-[12px] font-semibold text-[#86868b] mb-2 block uppercase tracking-wider">Interact</span>
+<h3 class="text-[28px] md:text-[34px] font-bold mb-4 leading-tight">Live Mentorship.</h3>
+<p class="text-[#86868b] text-[17px] leading-relaxed">Direct access to Grandmasters for personalized game analysis.</p>
+</div>
+<div class="mt-8 relative z-10">
+<span class="material-symbols-outlined text-[60px] opacity-40">mic_external_on</span>
+</div>
+</div>
+<!-- Small Card -->
+<div class="col-span-12 md:col-span-5 bg-white rounded-3xl p-10 md:p-14 flex flex-col justify-between shadow-sm overflow-hidden relative">
+<div>
+<span class="text-[12px] font-semibold text-[#86868b] mb-2 block uppercase tracking-wider">Analysis</span>
+<h3 class="text-[28px] md:text-[34px] font-bold text-primary mb-4 leading-tight">Neural Engine.</h3>
+<p class="text-[#86868b] text-[17px] leading-relaxed">Leverage custom-tuned AI to dissect your blunders and find subtle wins.</p>
+</div>
+<div class="mt-8 text-primary">
+<span class="material-symbols-outlined text-[60px] opacity-20">psychology</span>
+</div>
+</div>
+<!-- Medium Card -->
+<div class="col-span-12 md:col-span-7 bg-white rounded-3xl overflow-hidden shadow-sm group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="p-10 md:p-14 flex-1 flex flex-col justify-between">
+<div>
+<span class="text-[12px] font-semibold text-[#86868b] mb-2 block uppercase tracking-wider">Community</span>
+<h3 class="text-[28px] md:text-[34px] font-bold text-primary mb-4 leading-tight">The Arena.</h3>
+<p class="text-[#86868b] text-[17px] leading-relaxed">Join exclusive tournaments designed for every skill level. Compete and climb.</p>
+</div>
+<div class="mt-8">
+<a class="text-[#0066cc] hover:underline flex items-center gap-1 font-medium text-[17px]" href="#">
+                                    Enter the Lobby
+                                    <span class="material-symbols-outlined text-[17px]">chevron_right</span>
+</a>
+</div>
+</div>
+<div class="w-full md:w-[45%] h-64 md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" data-alt="A dramatic, high-end photograph of a professional chess arena" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkew_Ikud6K8C88UfbakONTS_I3U4pVpvoJTcAH5WVVYTYqKB6HNF-R3F99sP0VOCTzPQHVnUFdJI0-HmYPWROUq2xVhg9G5V9Nss0QDl3-6vzPidxWUtHzw586xrZ29fJjnN3CYihzhZGa1PUCXFtP2GXn4tmXzt2YJnfoZSswlLzBdlJeb__3-OYztquYkhYd8ZTuQ1Ynk3pzly23gdWbw7cldBbQ1zfV66Tr1_Es1ssM7h45MGtA3ZU10KQ8LF4M4oGvlqiv3VNmg">
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Focal Point (Dark Mode Style) -->
+<section class="section-padding bg-black text-white overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto flex flex-col lg:flex-row items-center gap-24">
+<div class="lg:w-1/2">
+<h2 class="text-[40px] md:text-[56px] font-bold mb-8 leading-[1.1] tracking-tight">Purity in Performance.</h2>
+<p class="text-[19px] md:text-[21px] text-[#86868b] mb-12 leading-relaxed font-normal max-w-lg">
+                    Our interface is stripped of distractions. No flashing lights, no cluttered sidebars. Just the board, the pieces, and your mind.
+                </p>
+<div class="space-y-10">
+<div class="flex items-start gap-5">
+<span class="material-symbols-outlined text-[32px] text-white">center_focus_strong</span>
+<div>
+<h4 class="text-[20px] font-semibold mb-2">Focus Mode.</h4>
+<p class="text-[#86868b] text-[17px]">Zen-inspired UI that removes all non-essential metadata during critical matches.</p>
+</div>
+</div>
+<div class="flex items-start gap-5">
+<span class="material-symbols-outlined text-[32px] text-white">vibration</span>
+<div>
+<h4 class="text-[20px] font-semibold mb-2">Haptic Precision.</h4>
+<p class="text-[#86868b] text-[17px]">Subtle soundscapes and tactile feedback that mimic physical pieces.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full relative">
+<div class="aspect-square bg-[#1d1d1f] rounded-[2rem] p-8 md:p-12 shadow-2xl flex items-center justify-center group">
+<div class="w-full h-full rounded-2xl overflow-hidden relative shadow-inner">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110" data-alt="Macro chess knight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi8mHqc-xLexpbquZjbzC_RVFwEugppmojjHs7dp0fXsOq2J-sdfD8TFKHvucJ6p-AjMhVMtXDUDOWc9FllxzI6NbCqskBN645jDPlid9jb0ew15srC3N-WfDt18xxFcYK1YvYtxwIDYdsKSP8hRHSge35VsEdRQuDukCqTqaxnZWU9bd_0vao27pp0LVPUmT5wwu82zzrhsSjSDdgMe2SWaayf3-q3ACQQQNelJOhFJjWevxYtH2EppkFQrEr2buTpFT6DA8xUfo">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / CTA -->
+<section class="section-padding px-margin-mobile md:px-margin-desktop bg-white">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-[32px] md:text-[48px] font-bold text-primary mb-6 tracking-tight">Begin Your Grandmaster Journey.</h2>
+<p class="text-[19px] md:text-[21px] text-[#86868b] mb-12">Subscribe for weekly analysis of legendary matches.</p>
+<form class="flex flex-col md:flex-row gap-0 max-w-md mx-auto overflow-hidden">
+<input class="flex-grow bg-[#f5f5f7] border-none focus:ring-0 text-[17px] px-6 py-4 rounded-l-2xl" placeholder="Email address" type="email">
+<button class="bg-[#0071e3] text-white px-8 py-4 text-[17px] font-medium hover:bg-[#0077ed] transition-all rounded-r-2xl" type="submit">Join</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f5f5f7] border-t border-outline-variant/30 full-width">
+<div class="w-full py-16 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+<div class="flex flex-col gap-4">
+<div class="text-[21px] font-bold text-primary">Chess Academy</div>
+<p class="text-[12px] text-[#86868b] max-w-[280px] leading-relaxed">More ways to learn: Call 1-800-MY-CHESS or find a grandmaster near you.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-8">
+<div class="flex flex-col gap-3">
+<h5 class="text-[12px] font-semibold text-primary uppercase tracking-wider">About</h5>
+<a class="text-[12px] text-[#424245] hover:underline" href="#">Our Story</a>
+<a class="text-[12px] text-[#424245] hover:underline" href="#">Team</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-[12px] font-semibold text-primary uppercase tracking-wider">Resources</h5>
+<a class="text-[12px] text-[#424245] hover:underline" href="#">Privacy</a>
+<a class="text-[12px] text-[#424245] hover:underline" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="text-[12px] font-semibold text-primary uppercase tracking-wider">Connect</h5>
+<a class="text-[12px] text-[#424245] hover:underline" href="#">Contact</a>
+<a class="text-[12px] text-[#424245] hover:underline" href="#">Support</a>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/50 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[12px] text-[#86868b]">Copyright © 2024 Chess Academy Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-[#86868b] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">public</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
