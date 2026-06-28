@@ -123,16 +123,23 @@
 </head>
 <body class="flex flex-col min-h-screen" style="filter: grayscale(100%) contrast(1.1);">
 <!-- Top Navigation -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-16">
-<div class="flex items-center gap-8">
-<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Chess Academy</a>
-</div>
-<div class="flex items-center gap-4">
-<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Sign In</a>
-</div>
-</div>
-</nav>
+<header class="glass-nav full-width top-0 border-b border-outline-variant/30 z-50 sticky">
+    <nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto h-12">
+        <div class="font-bold text-[21px] tracking-tight text-primary">
+            Chess Academy
+        </div>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="text-xs font-normal text-on-surface hover:text-primary transition-colors duration-200" href="index.html">Home</a>
+            <a class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors duration-200" href="howtoplay.html">How to Play</a>
+            <a class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors duration-200" href="signinregister.html">Sign In / Register</a>
+            <a class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors duration-200" href="tutorials.html">Tutorials</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="text-xs font-normal text-on-surface/70 hover:text-primary transition-colors">Sign In</button>
+            <button class="text-[11px] font-medium bg-primary text-on-primary px-3 py-1 rounded-full hover:bg-opacity-80 transition-all">Register</button>
+        </div>
+    </nav>
+</header>
 <!-- Main Content Canvas -->
 <main class="flex-grow flex flex-col items-center justify-center pt-32 pb-20 px-margin-mobile">
 <div class="w-full max-w-[440px] flex flex-col items-center">
